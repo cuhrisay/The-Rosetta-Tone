@@ -51,9 +51,9 @@ export default function HormoneAnswersBlog() {
                 height={500}
               />
               <div className="flex flex-1 flex-col p-6">
-                <h2 className="font-serif text-xl font-medium">{post.title}</h2>
+                <h2 className="font-display text-xl font-medium">{post.title}</h2>
                 <p className="mt-3 flex-1 text-sm text-muted-foreground">{post.excerpt}</p>
-                <span className="mt-6 inline-flex items-center gap-1 text-sm font-medium text-primary">
+                <span className="mt-6 inline-flex items-center gap-1 text-sm font-medium text-accent">
                   Read More
                   <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
                 </span>

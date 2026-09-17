@@ -14,8 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        serif: ["Fraunces", "Georgia", "serif"],
-        sans: ["Work Sans", "-apple-system", "sans-serif"],
+        display: ["Bricolage Grotesque", "Arial Black", "sans-serif"],
+        sans: ["Archivo", "-apple-system", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -51,18 +51,10 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        clay: {
-          DEFAULT: "hsl(var(--clay))",
-          foreground: "hsl(var(--clay-foreground))",
-        },
-        plum: {
-          DEFAULT: "hsl(var(--plum))",
-          foreground: "hsl(var(--plum-foreground))",
-        },
-        gold: {
-          DEFAULT: "hsl(var(--gold))",
-          foreground: "hsl(var(--gold-foreground))",
-        },
+        clay: "hsl(var(--clay))",
+        sage: "hsl(var(--sage))",
+        charcoal: "hsl(var(--charcoal))",
+        sand: "hsl(var(--sand))",
       },
       borderRadius: {
         lg: "var(--radius)",

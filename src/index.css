@@ -6,45 +6,43 @@
 
 @layer base {
   :root {
-    /* The Rosetta Tone — warm clay, deep plum, soft gold on a cream ground.
-       Strength + softness: a palette built for hormone-aware fitness coaching
-       for women of color, not a cold gym-blue template. */
-    --background: 32 38% 97%;
-    --foreground: 15 26% 14%;
+    /* The Rosetta Tone — brand palette: white, sand (#E5E3DC), clay (#D4967D),
+       sage (#495A58), charcoal (#303636). Quiet, editorial, muted — not the
+       bright terracotta/plum placeholder this replaced. */
+    --clay: 17 50% 66%; /* #D4967D */
+    --sage: 173 10% 32%; /* #495A58 */
+    --charcoal: 180 6% 20%; /* #303636 */
+    --sand: 46 15% 88%; /* #E5E3DC */
 
-    --card: 30 35% 99%;
-    --card-foreground: 15 26% 14%;
+    --background: 0 0% 100%;
+    --foreground: var(--charcoal);
 
-    --popover: 30 35% 99%;
-    --popover-foreground: 15 26% 14%;
+    --card: 0 0% 100%;
+    --card-foreground: var(--charcoal);
 
-    --primary: 16 62% 45%; /* terracotta clay */
-    --primary-foreground: 30 40% 98%;
+    --popover: 0 0% 100%;
+    --popover-foreground: var(--charcoal);
 
-    --secondary: 325 38% 21%; /* deep plum */
-    --secondary-foreground: 30 40% 97%;
+    --primary: var(--clay);
+    --primary-foreground: var(--charcoal);
 
-    --muted: 30 26% 92%;
-    --muted-foreground: 20 14% 38%;
+    --secondary: var(--charcoal);
+    --secondary-foreground: var(--sand);
 
-    --accent: 38 68% 56%; /* soft gold */
-    --accent-foreground: 15 30% 12%;
+    --muted: var(--sand);
+    --muted-foreground: 180 6% 40%;
 
-    --destructive: 0 72% 48%;
+    --accent: var(--sage);
+    --accent-foreground: 46 20% 94%;
+
+    --destructive: 0 65% 48%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 30 22% 86%;
-    --input: 30 22% 89%;
-    --ring: 16 62% 45%;
+    --border: 46 15% 85%;
+    --input: 46 15% 90%;
+    --ring: var(--clay);
 
     --radius: 0.9rem;
-
-    --clay: 16 62% 45%;
-    --clay-foreground: 30 40% 98%;
-    --plum: 325 38% 21%;
-    --plum-foreground: 30 40% 97%;
-    --gold: 38 68% 56%;
-    --gold-foreground: 15 30% 12%;
   }
 }
 
@@ -62,7 +60,8 @@
   }
 
   h1, h2, h3, h4 {
-    @apply font-serif;
+    @apply font-display;
+    letter-spacing: -0.02em;
   }
 
   ::selection {

@@ -24,13 +24,13 @@ export function BlogPostLayout({
         <div className="container max-w-3xl">
           <Link
             to="/hormone-answers-blog"
-            className="inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline"
+            className="inline-flex items-center gap-1 text-sm font-medium text-accent hover:underline"
           >
             <ArrowLeft size={16} /> Back to Hormone Answers Blog
           </Link>
 
-          <p className="mt-8 text-sm font-medium uppercase tracking-wide-lg text-primary">{eyebrow}</p>
-          <h1 className="mt-3 text-balance font-serif text-3xl font-medium md:text-4xl">{title}</h1>
+          <p className="mt-8 text-sm font-medium uppercase tracking-wide-lg text-accent">{eyebrow}</p>
+          <h1 className="mt-3 text-balance font-display text-3xl font-medium md:text-4xl">{title}</h1>
           <p className="mt-4 text-lg text-muted-foreground">{dek}</p>
 
           <img
@@ -42,7 +42,7 @@ export function BlogPostLayout({
             height={675}
           />
 
-          <div className="prose prose-neutral mt-10 max-w-none prose-headings:font-serif prose-headings:font-medium prose-a:text-primary">
+          <div className="prose prose-neutral mt-10 max-w-none prose-headings:font-display prose-headings:font-medium prose-a:text-accent">
             {children}
           </div>
 

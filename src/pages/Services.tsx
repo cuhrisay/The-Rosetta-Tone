@@ -115,17 +115,17 @@ export default function Services() {
                 height={600}
               />
               <div>
-                <p className="text-sm font-medium uppercase tracking-wide-lg text-primary">
+                <p className="text-sm font-medium uppercase tracking-wide-lg text-accent">
                   {service.tagline}
                 </p>
-                <h2 className="mt-3 text-balance font-serif text-2xl font-medium md:text-3xl">
+                <h2 className="mt-3 text-balance font-display text-2xl font-medium md:text-3xl">
                   {service.title}
                 </h2>
                 <p className="mt-4 text-muted-foreground">{service.description}</p>
                 <ul className="mt-6 space-y-2">
                   {service.includes.map((item) => (
                     <li key={item} className="flex items-start gap-2 text-sm">
-                      <Check size={18} className="mt-0.5 shrink-0 text-primary" />
+                      <Check size={18} className="mt-0.5 shrink-0 text-accent" />
                       <span>{item}</span>
                     </li>
                   ))}
@@ -144,10 +144,10 @@ export default function Services() {
 
       <section className="bg-muted/50 py-16">
         <div className="container max-w-2xl text-center">
-          <p className="text-sm font-medium uppercase tracking-wide-lg text-primary">
+          <p className="text-sm font-medium uppercase tracking-wide-lg text-accent">
             ✧ Energy Exchange Available ✧
           </p>
-          <h2 className="mt-3 font-serif text-2xl font-medium md:text-3xl">
+          <h2 className="mt-3 font-display text-2xl font-medium md:text-3xl">
             Open to Select Energy Exchanges for Pole Sessions
           </h2>
           <p className="mt-4 text-muted-foreground">

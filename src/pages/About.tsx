@@ -29,7 +29,7 @@ export default function About() {
             width={700}
             height={875}
           />
-          <div className="prose prose-neutral max-w-none prose-headings:font-serif prose-headings:font-medium">
+          <div className="prose prose-neutral max-w-none prose-headings:font-display prose-headings:font-medium">
             <h2>My Story</h2>
             <p>
               I used to hate the gym. I know, I know. My story is probably the most unconventional
@@ -66,7 +66,7 @@ export default function About() {
               business specializing in women's fitness and nutrition through a hormone-focused
               lens, because I noticed a major gap in the industry, especially for women of color.
             </p>
-            <p className="font-serif text-xl not-italic text-foreground">
+            <p className="font-display text-xl not-italic text-foreground">
               Women are not small men. Our training should reflect that.
             </p>
             <p>

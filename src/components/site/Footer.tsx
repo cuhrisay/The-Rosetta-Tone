@@ -6,8 +6,8 @@ export function Footer() {
     <footer className="border-t border-border/60 bg-secondary text-secondary-foreground">
       <div className="container grid gap-10 py-14 md:grid-cols-4">
         <div className="md:col-span-2">
-          <Link to="/" className="font-serif text-2xl font-semibold">
-            The Rosetta Tone<span className="text-gold">.</span>
+          <Link to="/" className="font-display text-2xl font-semibold">
+            The Rosetta Tone<span className="text-primary">.</span>
           </Link>
           <p className="mt-4 max-w-sm text-sm text-secondary-foreground/70">
             Cycle-syncing fitness &amp; nutrition coaching for women of color. Build strength,
@@ -19,7 +19,7 @@ export function Footer() {
               target="_blank"
               rel="noreferrer"
               aria-label="Instagram"
-              className="text-secondary-foreground/70 transition-colors hover:text-gold"
+              className="text-secondary-foreground/70 transition-colors hover:text-primary"
             >
               <Instagram size={20} />
             </a>
@@ -28,7 +28,7 @@ export function Footer() {
               target="_blank"
               rel="noreferrer"
               aria-label="Facebook"
-              className="text-secondary-foreground/70 transition-colors hover:text-gold"
+              className="text-secondary-foreground/70 transition-colors hover:text-primary"
             >
               <Facebook size={20} />
             </a>
@@ -37,7 +37,7 @@ export function Footer() {
               target="_blank"
               rel="noreferrer"
               aria-label="TikTok"
-              className="text-secondary-foreground/70 transition-colors hover:text-gold"
+              className="text-secondary-foreground/70 transition-colors hover:text-primary"
             >
               <Music2 size={20} />
             </a>
@@ -45,21 +45,21 @@ export function Footer() {
         </div>
 
         <div>
-          <h3 className="font-serif text-lg">Explore</h3>
+          <h3 className="font-display text-lg">Explore</h3>
           <ul className="mt-4 space-y-2 text-sm text-secondary-foreground/70">
-            <li><Link to="/services" className="hover:text-gold">Services</Link></li>
-            <li><Link to="/11-coaching" className="hover:text-gold">Work With Me</Link></li>
-            <li><Link to="/client-testimonials" className="hover:text-gold">Client Wins</Link></li>
-            <li><Link to="/about" className="hover:text-gold">About</Link></li>
+            <li><Link to="/services" className="hover:text-primary">Services</Link></li>
+            <li><Link to="/11-coaching" className="hover:text-primary">Work With Me</Link></li>
+            <li><Link to="/client-testimonials" className="hover:text-primary">Client Wins</Link></li>
+            <li><Link to="/about" className="hover:text-primary">About</Link></li>
           </ul>
         </div>
 
         <div>
-          <h3 className="font-serif text-lg">Resources</h3>
+          <h3 className="font-display text-lg">Resources</h3>
           <ul className="mt-4 space-y-2 text-sm text-secondary-foreground/70">
-            <li><Link to="/hormone-answers-blog" className="hover:text-gold">Hormone Answers Blog</Link></li>
-            <li><Link to="/free-guide" className="hover:text-gold">Free Cycle-Syncing Guide</Link></li>
-            <li><Link to="/faqs" className="hover:text-gold">FAQs</Link></li>
+            <li><Link to="/hormone-answers-blog" className="hover:text-primary">Hormone Answers Blog</Link></li>
+            <li><Link to="/free-guide" className="hover:text-primary">Free Cycle-Syncing Guide</Link></li>
+            <li><Link to="/faqs" className="hover:text-primary">FAQs</Link></li>
           </ul>
         </div>
       </div>

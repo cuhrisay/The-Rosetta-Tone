@@ -66,10 +66,10 @@ export default function FreeGuide() {
           height={875}
         />
         <div>
-          <p className="mb-4 text-sm font-medium uppercase tracking-wide-lg text-primary">
+          <p className="mb-4 text-sm font-medium uppercase tracking-wide-lg text-accent">
             Free Guide
           </p>
-          <h1 className="text-balance font-serif text-3xl font-medium md:text-4xl">
+          <h1 className="text-balance font-display text-3xl font-medium md:text-4xl">
             Ready to feel confident in your body and eat in a way that supports your hormones?
           </h1>
           <p className="mt-4 text-muted-foreground">

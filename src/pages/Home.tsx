@@ -60,10 +60,10 @@ export default function Home() {
       <section className="relative overflow-hidden bg-secondary text-secondary-foreground">
         <div className="container grid gap-12 py-20 md:grid-cols-2 md:items-center md:py-28">
           <div className="reveal is-visible">
-            <p className="mb-4 text-sm font-medium uppercase tracking-wide-lg text-gold">
+            <p className="mb-4 text-sm font-medium uppercase tracking-wide-lg text-primary">
               NASM Certified Personal Trainer &amp; Nutrition Coach
             </p>
-            <h1 className="text-balance font-serif text-4xl font-medium leading-tight md:text-5xl">
+            <h1 className="text-balance font-display text-4xl font-medium leading-tight md:text-5xl">
               Cycle-Syncing Fitness &amp; Nutrition Coaching for Women of Color
             </h1>
             <p className="mt-6 text-lg text-secondary-foreground/80">
@@ -107,7 +107,7 @@ export default function Home() {
             height={875}
           />
           <div className="order-1 md:order-2">
-            <h2 className="text-balance font-serif text-3xl font-medium md:text-4xl">
+            <h2 className="text-balance font-display text-3xl font-medium md:text-4xl">
               "Why is my body not responding the way it used to?"
             </h2>
             <div className="mt-6 space-y-4 text-muted-foreground">
@@ -129,7 +129,7 @@ export default function Home() {
       <section className="bg-muted/50 py-20 md:py-28">
         <div className="container">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="font-serif text-3xl font-medium md:text-4xl">Ways to Work Together</h2>
+            <h2 className="font-display text-3xl font-medium md:text-4xl">Ways to Work Together</h2>
             <p className="mt-4 text-muted-foreground">
               Whether you want hands-on coaching, fully online support, nutrition-only guidance, or
               to get stronger on the pole — there's a program built for where you are.
@@ -147,10 +147,10 @@ export default function Home() {
       <section className="py-20 md:py-28">
         <div className="container grid gap-12 md:grid-cols-2 md:items-center">
           <div>
-            <p className="mb-4 text-sm font-medium uppercase tracking-wide-lg text-primary">
+            <p className="mb-4 text-sm font-medium uppercase tracking-wide-lg text-accent">
               Meet Your Coach
             </p>
-            <h2 className="text-balance font-serif text-3xl font-medium md:text-4xl">
+            <h2 className="text-balance font-display text-3xl font-medium md:text-4xl">
               A pole dancer turned NASM-certified coach.
             </h2>
             <div className="mt-6 space-y-4 text-muted-foreground">
@@ -184,10 +184,10 @@ export default function Home() {
       <section className="bg-secondary py-20 text-secondary-foreground md:py-28">
         <div className="container">
           <div className="mx-auto max-w-2xl text-center">
-            <p className="mb-4 text-sm font-medium uppercase tracking-wide-lg text-gold">
+            <p className="mb-4 text-sm font-medium uppercase tracking-wide-lg text-primary">
               Client Wins
             </p>
-            <h2 className="font-serif text-3xl font-medium md:text-4xl">
+            <h2 className="font-display text-3xl font-medium md:text-4xl">
               Real women, real results.
             </h2>
           </div>
@@ -208,7 +208,7 @@ export default function Home() {
       <section className="py-20 md:py-28">
         <div className="container grid gap-12 md:grid-cols-2 md:items-center">
           <div>
-            <h2 className="text-balance font-serif text-3xl font-medium md:text-4xl">
+            <h2 className="text-balance font-display text-3xl font-medium md:text-4xl">
               Women aren't small men.
             </h2>
             <div className="mt-6 space-y-4 text-muted-foreground">

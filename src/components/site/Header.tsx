@@ -21,8 +21,8 @@ function NavItem({ to, label, onClick }: { to: string; label: string; onClick?: 
       onClick={onClick}
       className={({ isActive }) =>
         cn(
-          "text-sm font-medium tracking-wide transition-colors hover:text-primary",
-          isActive ? "text-primary" : "text-foreground/80",
+          "text-sm font-medium tracking-wide transition-colors hover:text-accent",
+          isActive ? "text-accent" : "text-foreground/80",
         )
       }
     >
@@ -37,8 +37,8 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/90 backdrop-blur">
       <div className="container flex h-20 items-center justify-between">
-        <Link to="/" className="font-serif text-2xl font-semibold tracking-tight text-foreground">
-          The Rosetta Tone<span className="text-primary">.</span>
+        <Link to="/" className="font-display text-2xl font-semibold tracking-tight text-foreground">
+          The Rosetta Tone<span className="text-accent">.</span>
         </Link>
 
         <nav className="hidden items-center gap-8 lg:flex">
@@ -53,7 +53,7 @@ export function Header() {
             target="_blank"
             rel="noreferrer"
             aria-label="Instagram"
-            className="text-foreground/70 transition-colors hover:text-primary"
+            className="text-foreground/70 transition-colors hover:text-accent"
           >
             <Instagram size={20} />
           </a>
@@ -62,7 +62,7 @@ export function Header() {
             target="_blank"
             rel="noreferrer"
             aria-label="Facebook"
-            className="text-foreground/70 transition-colors hover:text-primary"
+            className="text-foreground/70 transition-colors hover:text-accent"
           >
             <Facebook size={20} />
           </a>
@@ -85,7 +85,7 @@ export function Header() {
               <Link
                 to="/free-guide"
                 onClick={() => setOpen(false)}
-                className="text-sm font-medium tracking-wide text-foreground/80 hover:text-primary"
+                className="text-sm font-medium tracking-wide text-foreground/80 hover:text-accent"
               >
                 Free Guide
               </Link>
