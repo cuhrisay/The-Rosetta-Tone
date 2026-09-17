@@ -1,0 +1,15 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Old duplicate cycle-syncing post — merged into cycle-syncing-workouts (see BLOG feedback).
+  RewriteRule ^hormone-answers-blog/menstrual-cycle-exercise/?$ /hormone-answers-blog/cycle-syncing-workouts [R=301,L]
+
+  # Let real files and directories (assets, application.php, etc.) serve normally
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # Everything else falls back to index.html so React Router can handle it
+  RewriteRule ^ index.html [L]
+</IfModule>

@@ -1,0 +1,96 @@
+@import "./fonts.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* The Rosetta Tone — warm clay, deep plum, soft gold on a cream ground.
+       Strength + softness: a palette built for hormone-aware fitness coaching
+       for women of color, not a cold gym-blue template. */
+    --background: 32 38% 97%;
+    --foreground: 15 26% 14%;
+
+    --card: 30 35% 99%;
+    --card-foreground: 15 26% 14%;
+
+    --popover: 30 35% 99%;
+    --popover-foreground: 15 26% 14%;
+
+    --primary: 16 62% 45%; /* terracotta clay */
+    --primary-foreground: 30 40% 98%;
+
+    --secondary: 325 38% 21%; /* deep plum */
+    --secondary-foreground: 30 40% 97%;
+
+    --muted: 30 26% 92%;
+    --muted-foreground: 20 14% 38%;
+
+    --accent: 38 68% 56%; /* soft gold */
+    --accent-foreground: 15 30% 12%;
+
+    --destructive: 0 72% 48%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 30 22% 86%;
+    --input: 30 22% 89%;
+    --ring: 16 62% 45%;
+
+    --radius: 0.9rem;
+
+    --clay: 16 62% 45%;
+    --clay-foreground: 30 40% 98%;
+    --plum: 325 38% 21%;
+    --plum-foreground: 30 40% 97%;
+    --gold: 38 68% 56%;
+    --gold-foreground: 15 30% 12%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-serif;
+  }
+
+  ::selection {
+    @apply bg-primary text-primary-foreground;
+  }
+}
+
+@layer utilities {
+  .tracking-wide-lg {
+    letter-spacing: 0.14em;
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+    }
+  }
+}
