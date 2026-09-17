@@ -76,7 +76,7 @@ export function Footer() {
           <p>
             Website designed and managed by{" "}
             <a
-              href="https://heauxdesigns.ch"
+              href="https://chrisiemarketing.com"
               target="_blank"
               rel="noreferrer"
               className="underline underline-offset-2 hover:text-primary"
