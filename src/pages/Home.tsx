@@ -60,7 +60,7 @@ export default function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="relative flex min-h-[620px] items-center overflow-hidden text-white md:min-h-[760px]">
+      <section className="relative flex min-h-[620px] items-center overflow-hidden text-white md:min-h-[760px] lg:min-h-[900px]">
         <img
           src="/assets/images/photo-rosetta-hero-main.webp"
           alt="Rosetta Riley, personal trainer and nutrition coach"
