@@ -64,7 +64,7 @@ export default function Home() {
         <img
           src="/assets/images/photo-rosetta-hero-main.webp"
           alt="Rosetta Riley, personal trainer and nutrition coach"
-          className="absolute inset-0 h-full w-full object-cover object-bottom"
+          className="absolute inset-0 h-full w-full object-cover object-top md:object-center"
           loading="eager"
           // @ts-expect-error -- lowercase HTML attribute; React 18 doesn't camelCase this one
           fetchpriority="high"
