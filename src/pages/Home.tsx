@@ -64,12 +64,12 @@ export default function Home() {
         <img
           src="/assets/images/photo-rosetta-hero-main.webp"
           alt="Rosetta Riley, personal trainer and nutrition coach"
-          className="absolute inset-0 h-full w-full object-cover object-top"
+          className="absolute inset-0 h-full w-full object-cover object-bottom"
           loading="eager"
           // @ts-expect-error -- lowercase HTML attribute; React 18 doesn't camelCase this one
           fetchpriority="high"
         />
-        <div className="absolute inset-0 bg-charcoal/65" />
+        <div className="absolute inset-0 bg-black/50" />
         <div className="container relative z-10 py-20 md:py-28">
           <div className="reveal is-visible max-w-2xl">
             <p className="mb-4 text-sm font-medium uppercase tracking-wide-lg text-primary">
