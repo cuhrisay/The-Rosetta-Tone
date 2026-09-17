@@ -13,13 +13,23 @@ export function CTABand({
   to?: string;
 }) {
   return (
-    <section className="bg-primary py-16 text-primary-foreground">
-      <div className="container max-w-2xl text-center">
-        <h2 className="text-balance font-display text-3xl font-medium md:text-4xl">{title}</h2>
-        <p className="mt-4 text-primary-foreground/85">{description}</p>
-        <Button asChild size="lg" variant="secondary" className="mt-8">
-          <Link to={to}>{buttonLabel}</Link>
-        </Button>
+    <section className="bg-primary text-primary-foreground">
+      <div className="container grid items-center gap-10 py-16 md:grid-cols-[1fr_1.1fr]">
+        <img
+          src="/assets/images/photo-rosetta-laptop-consult.webp"
+          alt="Rosetta Riley coaching a client online"
+          className="aspect-[4/3] w-full rounded-3xl object-cover shadow-lg"
+          loading="lazy"
+          width={800}
+          height={600}
+        />
+        <div className="text-center md:text-left">
+          <h2 className="text-balance font-display text-3xl font-medium md:text-4xl">{title}</h2>
+          <p className="mt-4 text-primary-foreground/85">{description}</p>
+          <Button asChild size="lg" variant="secondary" className="mt-8">
+            <Link to={to}>{buttonLabel}</Link>
+          </Button>
+        </div>
       </div>
     </section>
   );

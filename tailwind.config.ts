@@ -14,7 +14,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ["Bricolage Grotesque", "Arial Black", "sans-serif"],
+        display: ["Trocchi", "Georgia", "serif"],
         sans: ["Archivo", "-apple-system", "sans-serif"],
       },
       colors: {

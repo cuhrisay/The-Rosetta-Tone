@@ -12,6 +12,8 @@ import ClientWins from "./pages/ClientWins";
 import Faqs from "./pages/Faqs";
 import FreeGuide from "./pages/FreeGuide";
 import HormoneAnswersBlog from "./pages/HormoneAnswersBlog";
+import DallasPersonalTraining from "./pages/DallasPersonalTraining";
+import PoleDanceEuless from "./pages/PoleDanceEuless";
 import CycleSyncingWorkouts from "./pages/blog/CycleSyncingWorkouts";
 import GetToned from "./pages/blog/GetToned";
 import NotFound from "./pages/NotFound";
@@ -33,6 +35,8 @@ const App = () => (
             <Route path="/client-testimonials" element={<ClientWins />} />
             <Route path="/faqs" element={<Faqs />} />
             <Route path="/free-guide" element={<FreeGuide />} />
+            <Route path="/personal-trainer-dallas" element={<DallasPersonalTraining />} />
+            <Route path="/pole-dance-classes-euless" element={<PoleDanceEuless />} />
             <Route path="/hormone-answers-blog" element={<HormoneAnswersBlog />} />
             <Route path="/hormone-answers-blog/cycle-syncing-workouts" element={<CycleSyncingWorkouts />} />
             <Route path="/hormone-answers-blog/get-toned-without-losing-curves" element={<GetToned />} />

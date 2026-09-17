@@ -1,16 +1,17 @@
 import { Link } from "react-router-dom";
-import { Dumbbell, Salad, Users, Sparkles } from "lucide-react";
+import { Dumbbell, Salad, Users, Sparkles, ExternalLink, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ServiceCard } from "@/components/site/ServiceCard";
 import { TestimonialCard } from "@/components/site/TestimonialCard";
 import { CTABand } from "@/components/site/CTABand";
 import { useSeo } from "@/hooks/use-seo";
+import { GOOGLE_REVIEWS_URL, POLE_PROGRAM_URL } from "@/lib/links";
 
 const SERVICES = [
   {
     icon: Users,
     title: "Hybrid In-Person Training",
-    description: "In-person coaching with online structure and accountability. My most personalized, high-touch experience.",
+    description: "In-person coaching in Dallas with online structure and accountability. My most personalized, high-touch experience.",
   },
   {
     icon: Dumbbell,
@@ -25,18 +26,20 @@ const SERVICES = [
   {
     icon: Sparkles,
     title: "Pole Dance Lessons",
-    description: "Strength, confidence, and sensual movement in a safe, supportive space — DFW area.",
+    description: "Online or in-person near Euless — strength, confidence, and sensual movement in a safe, supportive space.",
   },
 ];
 
 const TESTIMONIALS = [
   {
     name: "Ashley Nelson",
+    avatar: "/assets/images/avatar-ashley-nelson.jpg",
     quote:
       "As someone who suffers from PMDD I never in a million years thought I'd enjoy working out during my luteal or menstrual phase, but this workout program has changed that!",
   },
   {
     name: "Diana Cartwright",
+    avatar: "/assets/images/avatar-diana-cartwright.jpg",
     quote:
       "She didn't just teach me how to lift—she helped me build confidence, discipline, and a routine I actually enjoy. I was supported when I doubted myself, and celebrated on every win.",
   },
@@ -57,16 +60,25 @@ export default function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="relative overflow-hidden bg-secondary text-secondary-foreground">
-        <div className="container grid gap-12 py-20 md:grid-cols-2 md:items-center md:py-28">
-          <div className="reveal is-visible">
+      <section className="relative flex min-h-[620px] items-center overflow-hidden text-white md:min-h-[760px]">
+        <img
+          src="/assets/images/photo-rosetta-hero-main.webp"
+          alt="Rosetta Riley, personal trainer and nutrition coach"
+          className="absolute inset-0 h-full w-full object-cover object-top"
+          loading="eager"
+          // @ts-expect-error -- lowercase HTML attribute; React 18 doesn't camelCase this one
+          fetchpriority="high"
+        />
+        <div className="absolute inset-0 bg-charcoal/65" />
+        <div className="container relative z-10 py-20 md:py-28">
+          <div className="reveal is-visible max-w-2xl">
             <p className="mb-4 text-sm font-medium uppercase tracking-wide-lg text-primary">
-              NASM Certified Personal Trainer &amp; Nutrition Coach
+              Rosetta Riley | NASM Certified Personal Trainer &amp; Nutrition Coach
             </p>
             <h1 className="text-balance font-display text-4xl font-medium leading-tight md:text-5xl">
               Cycle-Syncing Fitness &amp; Nutrition Coaching for Women of Color
             </h1>
-            <p className="mt-6 text-lg text-secondary-foreground/80">
+            <p className="mt-6 text-lg text-white/85">
               If you're a woman of color in your 30s, 40s, or beyond — this is for you. Let's build
               a body you feel damn good living in, without obsessing over calories or punishing
               yourself with workouts.
@@ -75,22 +87,10 @@ export default function Home() {
               <Button asChild size="lg">
                 <Link to="/services">Explore My Training Programs</Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="border-secondary-foreground/30 bg-transparent text-secondary-foreground hover:bg-secondary-foreground/10">
+              <Button asChild size="lg" variant="outline" className="border-white/40 bg-transparent text-white hover:bg-white/10">
                 <Link to="/11-coaching">Apply to Work With Me</Link>
               </Button>
             </div>
-          </div>
-          <div className="relative">
-            <img
-              src="/assets/images/photo-rosetta-hero-main.webp"
-              alt="Rosetta Riley, personal trainer and nutrition coach"
-              className="aspect-[4/5] w-full rounded-3xl object-cover shadow-xl"
-              loading="eager"
-              // @ts-expect-error -- lowercase HTML attribute; React 18 doesn't camelCase this one
-              fetchpriority="high"
-              width={800}
-              height={1000}
-            />
           </div>
         </div>
       </section>
@@ -172,7 +172,7 @@ export default function Home() {
           <img
             src="/assets/images/photo-rosetta-bio-teaser.webp"
             alt="Rosetta Riley"
-            className="aspect-[4/5] w-full rounded-3xl object-cover shadow-md"
+            className="aspect-[4/5] w-full rounded-3xl object-cover object-bottom shadow-md"
             loading="lazy"
             width={700}
             height={875}
@@ -196,10 +196,19 @@ export default function Home() {
               <TestimonialCard key={t.name} {...t} />
             ))}
           </div>
-          <div className="mt-10 text-center">
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
             <Button asChild variant="outline" className="border-secondary-foreground/30 bg-transparent text-secondary-foreground hover:bg-secondary-foreground/10">
               <Link to="/client-testimonials">Read More Client Wins</Link>
             </Button>
+            <a
+              href={GOOGLE_REVIEWS_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-1.5 text-sm font-medium text-secondary-foreground/80 hover:text-primary"
+            >
+              <Star size={16} className="fill-current" />
+              Read more Google reviews
+            </a>
           </div>
         </div>
       </section>
@@ -209,7 +218,7 @@ export default function Home() {
         <div className="container grid gap-12 md:grid-cols-2 md:items-center">
           <div>
             <h2 className="text-balance font-display text-3xl font-medium md:text-4xl">
-              Women aren't small men.
+              Your Hormones Change. Your Training Should Too.
             </h2>
             <div className="mt-6 space-y-4 text-muted-foreground">
               <p>
@@ -234,6 +243,30 @@ export default function Home() {
             width={700}
             height={875}
           />
+        </div>
+      </section>
+
+      {/* Pole Dancer's Strength & Conditioning Plan */}
+      <section className="pb-20 md:pb-28">
+        <div className="container">
+          <div className="flex flex-col items-center gap-6 rounded-3xl border border-border bg-muted/40 p-8 text-center md:flex-row md:justify-between md:text-left">
+            <div>
+              <p className="text-xs font-medium uppercase tracking-wide-lg text-accent">
+                New Digital Program
+              </p>
+              <h3 className="mt-2 font-display text-xl font-medium md:text-2xl">
+                The Pole Dancer's Strength &amp; Conditioning Plan
+              </h3>
+              <p className="mt-2 text-sm text-muted-foreground">
+                A self-paced program on the Playbook app — $14.99/mo, with a 7-day free trial.
+              </p>
+            </div>
+            <Button asChild variant="outline" className="shrink-0">
+              <a href={POLE_PROGRAM_URL} target="_blank" rel="noreferrer">
+                Try It Free <ExternalLink className="ml-1" size={16} />
+              </a>
+            </Button>
+          </div>
         </div>
       </section>
 

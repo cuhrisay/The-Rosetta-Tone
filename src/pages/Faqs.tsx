@@ -48,9 +48,9 @@ export default function Faqs() {
       <section className="py-16 md:py-24">
         <div className="container max-w-3xl">
           <img
-            src="/assets/images/photo-rosetta-shoot-extra-02.webp"
+            src="/assets/images/photo-rosetta-faqs.webp"
             alt="Rosetta Riley"
-            className="mb-12 aspect-[16/9] w-full rounded-3xl object-cover shadow-md"
+            className="mb-12 aspect-[4/3] w-full rounded-3xl object-cover shadow-md"
             loading="lazy"
             width={1200}
             height={675}

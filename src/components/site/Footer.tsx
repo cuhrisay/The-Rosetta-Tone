@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Instagram, Facebook, Music2 } from "lucide-react";
+import { POLE_PROGRAM_URL } from "@/lib/links";
 
 export function Footer() {
   return (
@@ -60,14 +61,30 @@ export function Footer() {
             <li><Link to="/hormone-answers-blog" className="hover:text-primary">Hormone Answers Blog</Link></li>
             <li><Link to="/free-guide" className="hover:text-primary">Free Cycle-Syncing Guide</Link></li>
             <li><Link to="/faqs" className="hover:text-primary">FAQs</Link></li>
+            <li>
+              <a href={POLE_PROGRAM_URL} target="_blank" rel="noreferrer" className="hover:text-primary">
+                Pole Strength Program
+              </a>
+            </li>
           </ul>
         </div>
       </div>
 
       <div className="border-t border-secondary-foreground/10 py-6">
-        <p className="container text-center text-xs text-secondary-foreground/50">
-          © {new Date().getFullYear()} The Rosetta Tone. All rights reserved.
-        </p>
+        <div className="container flex flex-col items-center gap-2 text-center text-xs text-secondary-foreground/50">
+          <p>© {new Date().getFullYear()} The Rosetta Tone. All rights reserved.</p>
+          <p>
+            Website designed and managed by{" "}
+            <a
+              href="https://heauxdesigns.ch"
+              target="_blank"
+              rel="noreferrer"
+              className="underline underline-offset-2 hover:text-primary"
+            >
+              Chrisie Marketing &amp; Design
+            </a>
+          </p>
+        </div>
       </div>
     </footer>
   );

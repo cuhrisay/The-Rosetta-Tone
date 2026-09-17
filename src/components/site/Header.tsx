@@ -4,6 +4,7 @@ import { Menu, Instagram, Facebook } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
+import { POLE_PROGRAM_URL } from "@/lib/links";
 
 const NAV_LINKS = [
   { label: "Services", to: "/services" },
@@ -49,6 +50,14 @@ export function Header() {
 
         <div className="hidden items-center gap-4 lg:flex">
           <a
+            href={POLE_PROGRAM_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="text-sm font-medium tracking-wide text-foreground/60 transition-colors hover:text-accent"
+          >
+            Pole Program
+          </a>
+          <a
             href="http://instagram.com/therosettatone"
             target="_blank"
             rel="noreferrer"
@@ -89,6 +98,14 @@ export function Header() {
               >
                 Free Guide
               </Link>
+              <a
+                href={POLE_PROGRAM_URL}
+                target="_blank"
+                rel="noreferrer"
+                className="text-sm font-medium tracking-wide text-foreground/80 hover:text-accent"
+              >
+                Pole Strength Program
+              </a>
               <Button asChild onClick={() => setOpen(false)}>
                 <Link to="/11-coaching">Apply to Work With Me</Link>
               </Button>

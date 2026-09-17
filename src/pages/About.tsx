@@ -22,7 +22,7 @@ export default function About() {
       <section className="py-16 md:py-24">
         <div className="container grid gap-12 md:grid-cols-[1fr_1.4fr] md:gap-16">
           <img
-            src="/assets/images/photo-rosetta-faqs.webp"
+            src="/assets/images/photo-rosetta-hero-secondary.webp"
             alt="Rosetta Riley"
             className="aspect-[4/5] w-full rounded-3xl object-cover shadow-md md:sticky md:top-28 md:self-start"
             loading="lazy"

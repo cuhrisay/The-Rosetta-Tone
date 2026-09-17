@@ -13,7 +13,9 @@ interface Service {
   bestFor: string;
   image: string;
   imageAlt: string;
+  imageAspect: string;
   reverse?: boolean;
+  learnMore?: { label: string; to: string };
 }
 
 const SERVICES: Service[] = [
@@ -21,7 +23,7 @@ const SERVICES: Service[] = [
     title: "Hybrid, In-Person Training + Nutrition Coaching",
     tagline: "My most personalized, high-touch experience",
     description:
-      "This option combines the best of both worlds: in-person coaching with online structure and accountability. We'll work together hands-on while also building habits that support you outside of our sessions.",
+      "This option combines the best of both worlds: in-person coaching in Dallas with online structure and accountability. We'll work together hands-on while also building habits that support you outside of our sessions.",
     includes: [
       "Customized workout and nutrition programming",
       "In-person training sessions",
@@ -29,9 +31,11 @@ const SERVICES: Service[] = [
       "Ongoing check-ins and accountability",
       "Lifestyle + habit support",
     ],
-    bestFor: "Women located in the DFW area who are ready to fully commit and want faster, more supported results.",
+    bestFor: "Women located in Dallas and the DFW area who are ready to fully commit and want faster, more supported results.",
     image: "/assets/images/photo-gym-training-deadhang.webp",
     imageAlt: "Rosetta training a client at the gym",
+    imageAspect: "aspect-[3/4]",
+    learnMore: { label: "More on in-person training in Dallas →", to: "/personal-trainer-dallas" },
   },
   {
     title: "Online Personal Training + Nutrition Coaching",
@@ -48,6 +52,7 @@ const SERVICES: Service[] = [
     bestFor: "Women with busy schedules who still want expert guidance and accountability.",
     image: "/assets/images/photo-rosetta-laptop-consult.webp",
     imageAlt: "Rosetta coaching a client online",
+    imageAspect: "aspect-[4/3]",
     reverse: true,
   },
   {
@@ -65,22 +70,26 @@ const SERVICES: Service[] = [
     bestFor: "Women who already train and want their nutrition dialed in to match.",
     image: "/assets/images/photo-rosetta-bio-teaser.webp",
     imageAlt: "Rosetta Riley",
+    imageAspect: "aspect-[2/3]",
   },
   {
-    title: "In-Person Pole Dance Lessons",
+    title: "Pole Dance Lessons",
     tagline: "Reconnect with your body, build confidence, explore your sensuality",
     description:
-      "Pole is more than a workout — it's a way to reconnect with your body, build confidence, and explore your sensuality in a safe, supportive space. It doesn't matter if you've never touched a pole or you're looking to refine your movement, these sessions meet you where you are.",
+      "Pole is more than a workout — it's a way to reconnect with your body, build confidence, and explore your sensuality in a safe, supportive space. Now offered both online and in-person near Euless, so it doesn't matter if you've never touched a pole or you're looking to refine your movement — these sessions meet you where you are.",
     includes: [
       "Strength and conditioning specifically for pole",
       "Flow, transitions, and musicality",
       "Confidence and body awareness",
       "Mobility and flexibility",
+      "Available online or in-person",
     ],
-    bestFor: "Women located in the DFW area who want to feel stronger, more confident, and more connected to themselves.",
+    bestFor: "Women in Hurst, Euless, Bedford, and the greater Dallas–Fort Worth area — or anywhere online.",
     image: "/assets/images/photo-pole-lesson-client.webp",
     imageAlt: "Rosetta teaching a pole dance lesson",
+    imageAspect: "aspect-[2/3]",
     reverse: true,
+    learnMore: { label: "More on in-person pole lessons near Euless →", to: "/pole-dance-classes-euless" },
   },
 ];
 
@@ -88,7 +97,7 @@ export default function Services() {
   useSeo({
     title: "Services — Personal Training, Nutrition Coaching & Pole Dance Lessons",
     description:
-      "Hybrid in-person training, online coaching, nutrition-only programs, and pole dance lessons with Rosetta Riley, NASM-certified trainer for women of color.",
+      "Hybrid in-person training in Dallas, online coaching, nutrition-only programs, and pole dance lessons (online or in-person) with Rosetta Riley, NASM-certified trainer for women of color.",
   });
 
   return (
@@ -109,10 +118,8 @@ export default function Services() {
               <img
                 src={service.image}
                 alt={service.imageAlt}
-                className="aspect-[4/3] w-full rounded-3xl object-cover shadow-md"
+                className={`${service.imageAspect} w-full rounded-3xl object-cover shadow-md`}
                 loading="lazy"
-                width={800}
-                height={600}
               />
               <div>
                 <p className="text-sm font-medium uppercase tracking-wide-lg text-accent">
@@ -133,9 +140,16 @@ export default function Services() {
                 <p className="mt-6 text-sm italic text-muted-foreground">
                   Best for: {service.bestFor}
                 </p>
-                <Button asChild className="mt-6">
-                  <Link to="/11-coaching">Apply to Work With Me 1:1</Link>
-                </Button>
+                <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3">
+                  <Button asChild>
+                    <Link to="/11-coaching">Apply to Work With Me 1:1</Link>
+                  </Button>
+                  {service.learnMore && (
+                    <Link to={service.learnMore.to} className="text-sm font-medium text-accent hover:underline">
+                      {service.learnMore.label}
+                    </Link>
+                  )}
+                </div>
               </div>
             </div>
           ))}
