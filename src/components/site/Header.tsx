@@ -55,7 +55,7 @@ export function Header() {
             rel="noreferrer"
             className="text-sm font-medium tracking-wide text-foreground/60 transition-colors hover:text-accent"
           >
-            Pole Program
+            Pole Strength Program
           </a>
           <a
             href="http://instagram.com/therosettatone"

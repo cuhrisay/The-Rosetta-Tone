@@ -249,23 +249,30 @@ export default function Home() {
       {/* Pole Dancer's Strength & Conditioning Plan */}
       <section className="pb-20 md:pb-28">
         <div className="container">
-          <div className="flex flex-col items-center gap-6 rounded-3xl border border-border bg-muted/40 p-8 text-center md:flex-row md:justify-between md:text-left">
-            <div>
+          <div className="flex flex-col items-center gap-8 rounded-3xl border border-border bg-muted/40 p-8 text-center md:flex-row md:gap-10 md:p-10 md:text-left">
+            <img
+              src="/assets/images/pole-dancers-strength-and-conditioning-plan-4-weeks.webp"
+              alt="The Pole Dancer's Strength & Conditioning Plan cover"
+              className="aspect-square w-40 shrink-0 rounded-2xl object-cover shadow-md md:w-48"
+              loading="lazy"
+            />
+            <div className="flex-1">
               <p className="text-xs font-medium uppercase tracking-wide-lg text-accent">
                 New Digital Program
               </p>
-              <h3 className="mt-2 font-display text-xl font-medium md:text-2xl">
+              <h3 className="mt-2 font-display text-2xl font-medium md:text-3xl">
                 The Pole Dancer's Strength &amp; Conditioning Plan
               </h3>
-              <p className="mt-2 text-sm text-muted-foreground">
-                A self-paced program on the Playbook app — $14.99/mo, with a 7-day free trial.
+              <p className="mt-3 text-muted-foreground">
+                A self-paced, 4-week program on the Playbook app — $14.99/mo, with a 7-day free
+                trial.
               </p>
+              <Button asChild className="mt-6">
+                <a href={POLE_PROGRAM_URL} target="_blank" rel="noreferrer">
+                  Try It Free <ExternalLink className="ml-1" size={16} />
+                </a>
+              </Button>
             </div>
-            <Button asChild variant="outline" className="shrink-0">
-              <a href={POLE_PROGRAM_URL} target="_blank" rel="noreferrer">
-                Try It Free <ExternalLink className="ml-1" size={16} />
-              </a>
-            </Button>
           </div>
         </div>
       </section>
