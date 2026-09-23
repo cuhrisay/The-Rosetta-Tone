@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import { cn } from "@/lib/utils";
+import { AnimatedHeading } from "./AnimatedHeading";
 
 export function PageHero({
   eyebrow,
@@ -18,7 +19,7 @@ export function PageHero({
         {eyebrow && (
           <p className="mb-4 text-sm font-medium uppercase tracking-wide-lg text-primary">{eyebrow}</p>
         )}
-        <h1 className="text-balance font-display text-4xl font-medium md:text-5xl">{title}</h1>
+        <AnimatedHeading as="h1" text={title} className="text-balance font-display text-4xl font-medium md:text-5xl" />
         {children && <div className="mt-6 text-lg text-secondary-foreground/75">{children}</div>}
       </div>
     </section>

@@ -91,4 +91,24 @@
       transition: none !important;
     }
   }
+
+  /* Word-by-word heading reveal: each word slides up and settles with a
+     slight overshoot ("back out" easing) instead of a flat fade-in. */
+  .word-reveal-item {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  .word-reveal.is-visible .word-reveal-item {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .word-reveal-item {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+    }
+  }
 }

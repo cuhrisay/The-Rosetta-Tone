@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { AnimatedHeading } from "./AnimatedHeading";
 
 export function CTABand({
   title = "Ready for a plan built around you?",
@@ -24,7 +25,7 @@ export function CTABand({
           height={600}
         />
         <div className="text-center md:text-left">
-          <h2 className="text-balance font-display text-3xl font-medium md:text-4xl">{title}</h2>
+          <AnimatedHeading as="h2" text={title} className="text-balance font-display text-3xl font-medium md:text-4xl" />
           <p className="mt-4 text-primary-foreground/85">{description}</p>
           <Button asChild size="lg" variant="secondary" className="mt-8">
             <Link to={to}>{buttonLabel}</Link>

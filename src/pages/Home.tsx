@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { ServiceCard } from "@/components/site/ServiceCard";
 import { TestimonialCard } from "@/components/site/TestimonialCard";
 import { CTABand } from "@/components/site/CTABand";
+import { AnimatedHeading } from "@/components/site/AnimatedHeading";
 import { useSeo } from "@/hooks/use-seo";
 import { GOOGLE_REVIEWS_URL, POLE_PROGRAM_URL } from "@/lib/links";
 
@@ -76,9 +77,11 @@ export default function Home() {
             <p className="mb-4 text-sm font-medium uppercase tracking-wide-lg text-primary">
               Rosetta Riley | NASM Certified Personal Trainer &amp; Nutrition Coach
             </p>
-            <h1 className="text-balance font-display text-4xl font-medium leading-tight md:text-5xl">
-              Cycle-Syncing Fitness &amp; Nutrition Coaching for Women of Color
-            </h1>
+            <AnimatedHeading
+              as="h1"
+              text="Cycle-Syncing Fitness & Nutrition Coaching for Women of Color"
+              className="text-balance font-display text-4xl font-medium leading-tight md:text-5xl"
+            />
             <p className="mt-6 text-lg text-white/85">
               If you're a woman of color in your 30s, 40s, or beyond — this is for you. Let's build
               a body you feel damn good living in, without obsessing over calories or punishing
@@ -108,9 +111,11 @@ export default function Home() {
             height={875}
           />
           <div className="order-1 md:order-2">
-            <h2 className="text-balance font-display text-3xl font-medium md:text-4xl">
-              "Why is my body not responding the way it used to?"
-            </h2>
+            <AnimatedHeading
+              as="h2"
+              text={'"Why is my body not responding the way it used to?"'}
+              className="text-balance font-display text-3xl font-medium md:text-4xl"
+            />
             <div className="mt-6 space-y-4 text-muted-foreground">
               <p>
                 Maybe your body feels different. Your energy isn't what it used to be. Your weight
@@ -130,7 +135,7 @@ export default function Home() {
       <section className="bg-muted/50 py-20 md:py-28">
         <div className="container">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="font-display text-3xl font-medium md:text-4xl">Ways to Work Together</h2>
+            <AnimatedHeading as="h2" text="Ways to Work Together" className="font-display text-3xl font-medium md:text-4xl" />
             <p className="mt-4 text-muted-foreground">
               Whether you want hands-on coaching, fully online support, nutrition-only guidance, or
               to get stronger on the pole — there's a program built for where you are.
@@ -151,9 +156,11 @@ export default function Home() {
             <p className="mb-4 text-sm font-medium uppercase tracking-wide-lg text-accent">
               Meet Your Coach
             </p>
-            <h2 className="text-balance font-display text-3xl font-medium md:text-4xl">
-              A pole dancer turned NASM-certified coach.
-            </h2>
+            <AnimatedHeading
+              as="h2"
+              text="A pole dancer turned NASM-certified coach."
+              className="text-balance font-display text-3xl font-medium md:text-4xl"
+            />
             <div className="mt-6 space-y-4 text-muted-foreground">
               <p>
                 Almost a decade ago, a pole dance class introduced me to what strength felt like.
@@ -188,9 +195,11 @@ export default function Home() {
             <p className="mb-4 text-sm font-medium uppercase tracking-wide-lg text-primary">
               Client Wins
             </p>
-            <h2 className="font-display text-3xl font-medium md:text-4xl">
-              Real women, real results.
-            </h2>
+            <AnimatedHeading
+              as="h2"
+              text="Real women, real results."
+              className="font-display text-3xl font-medium md:text-4xl"
+            />
           </div>
           <div className="mt-12 grid gap-6 md:grid-cols-3">
             {TESTIMONIALS.map((t) => (
@@ -218,9 +227,11 @@ export default function Home() {
       <section className="py-20 md:py-28">
         <div className="container grid gap-12 md:grid-cols-2 md:items-center">
           <div>
-            <h2 className="text-balance font-display text-3xl font-medium md:text-4xl">
-              Your Hormones Change. Your Training Should Too.
-            </h2>
+            <AnimatedHeading
+              as="h2"
+              text="Your Hormones Change. Your Training Should Too."
+              className="text-balance font-display text-3xl font-medium md:text-4xl"
+            />
             <div className="mt-6 space-y-4 text-muted-foreground">
               <p>
                 We've been given fitness and nutrition advice that treats our bodies as if they
