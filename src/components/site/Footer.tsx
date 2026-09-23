@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { Instagram, Facebook, Music2 } from "lucide-react";
+import { Instagram, Facebook } from "lucide-react";
+import { FaTiktok } from "react-icons/fa6";
 import { POLE_PROGRAM_URL } from "@/lib/links";
 
 export function Footer() {
@@ -40,7 +41,7 @@ export function Footer() {
               aria-label="TikTok"
               className="text-secondary-foreground/70 transition-colors hover:text-primary"
             >
-              <Music2 size={20} />
+              <FaTiktok size={18} />
             </a>
           </div>
         </div>

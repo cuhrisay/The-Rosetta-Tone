@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { Menu, Instagram, Music2 } from "lucide-react";
+import { Menu, Instagram } from "lucide-react";
+import { FaTiktok } from "react-icons/fa6";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
@@ -73,7 +74,7 @@ export function Header() {
             aria-label="TikTok"
             className="text-foreground/70 transition-colors hover:text-accent"
           >
-            <Music2 size={20} />
+            <FaTiktok size={18} />
           </a>
           <Button asChild>
             <Link to="/11-coaching">Apply to Work With Me</Link>
