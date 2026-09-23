@@ -8,7 +8,7 @@ import { GOOGLE_REVIEWS_URL } from "@/lib/links";
 const TESTIMONIALS = [
   {
     name: "Carley Washington",
-    avatar: "/assets/images/avatar-carley-washington.jpg",
+    avatar: "/assets/images/avatar-carley-washington-v2.jpg",
     quote:
       "I love the plan. I feel like I have something to follow that works for me. It's not extremely hard or too easy, which has been nice — it's a good challenge that makes me want to keep working out on my own.",
   },
