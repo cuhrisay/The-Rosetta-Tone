@@ -7,7 +7,7 @@ export function Footer() {
     <footer className="border-t border-border/60 bg-secondary text-secondary-foreground">
       <div className="container grid gap-10 py-14 md:grid-cols-4">
         <div className="md:col-span-2">
-          <Link to="/" className="font-display text-2xl font-semibold">
+          <Link to="/" className="font-display text-2xl font-normal">
             The Rosetta Tone<span className="text-primary">.</span>
           </Link>
           <p className="mt-4 max-w-sm text-sm text-secondary-foreground/70">

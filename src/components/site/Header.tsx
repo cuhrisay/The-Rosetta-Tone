@@ -39,7 +39,7 @@ export function Header() {
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/90 backdrop-blur">
       <div className="container flex h-20 items-center justify-between">
         <Link to="/" className="font-display text-2xl font-semibold tracking-tight text-foreground">
-          The Rosetta Tone<span className="text-accent">.</span>
+          The Rosetta Tone<span className="text-primary">.</span>
         </Link>
 
         <nav className="hidden items-center gap-8 lg:flex">
