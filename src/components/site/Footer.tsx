@@ -34,7 +34,7 @@ export function Footer() {
               <Facebook size={20} />
             </a>
             <a
-              href="https://www.tiktok.com/@rosettastone"
+              href="https://www.tiktok.com/@therosettatone"
               target="_blank"
               rel="noreferrer"
               aria-label="TikTok"
