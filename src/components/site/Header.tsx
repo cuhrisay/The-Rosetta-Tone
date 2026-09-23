@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { Menu, Instagram, Facebook } from "lucide-react";
+import { Menu, Instagram, Music2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
@@ -67,13 +67,13 @@ export function Header() {
             <Instagram size={20} />
           </a>
           <a
-            href="https://www.facebook.com/profile.php?id=100078999345010"
+            href="https://www.tiktok.com/@therosettatone"
             target="_blank"
             rel="noreferrer"
-            aria-label="Facebook"
+            aria-label="TikTok"
             className="text-foreground/70 transition-colors hover:text-accent"
           >
-            <Facebook size={20} />
+            <Music2 size={20} />
           </a>
           <Button asChild>
             <Link to="/11-coaching">Apply to Work With Me</Link>

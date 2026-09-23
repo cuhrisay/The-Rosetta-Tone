@@ -31,7 +31,7 @@ export function TestimonialCard({
       <blockquote className="mt-4 flex-1 text-sm leading-relaxed text-foreground/85">
         "{quote}"
       </blockquote>
-      <figcaption className="mt-6 font-display text-lg">{name}</figcaption>
+      <figcaption className="mt-6 font-display text-lg text-card-foreground">{name}</figcaption>
     </figure>
   );
 }

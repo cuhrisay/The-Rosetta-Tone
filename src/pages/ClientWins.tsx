@@ -20,6 +20,7 @@ const TESTIMONIALS = [
   },
   {
     name: "Chrisie Allen",
+    avatar: "/assets/images/avatar-chrisie-allen.webp",
     quote:
       "Rosetta is a fantastic coach. I loved my time working with her. She is so knowledgeable about hormone health as it pertains to fitness, which is something I really needed to be introduced to as I have endometriosis. If you decide to work with her, you will see lots of positive changes in your life!",
   },

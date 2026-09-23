@@ -45,6 +45,7 @@ const TESTIMONIALS = [
   },
   {
     name: "Chrisie Allen",
+    avatar: "/assets/images/avatar-chrisie-allen.webp",
     quote:
       "She is so knowledgeable about hormone health as it pertains to fitness, which is something I really needed to be introduced to as I have endometriosis.",
   },
