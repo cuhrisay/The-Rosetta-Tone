@@ -97,7 +97,7 @@ export function Header() {
                 onClick={() => setOpen(false)}
                 className="text-sm font-medium tracking-wide text-foreground/80 hover:text-accent"
               >
-                Free Guide
+                Free Hormone Nutrition Guide
               </Link>
               <a
                 href={POLE_PROGRAM_URL}

@@ -60,7 +60,7 @@ export function Footer() {
           <h3 className="font-display text-lg">Resources</h3>
           <ul className="mt-4 space-y-2 text-sm text-secondary-foreground/70">
             <li><Link to="/hormone-answers-blog" className="hover:text-primary">Hormone Answers Blog</Link></li>
-            <li><Link to="/free-guide" className="hover:text-primary">Free Cycle-Syncing Guide</Link></li>
+            <li><Link to="/free-guide" className="hover:text-primary">Free Hormone Nutrition Guide</Link></li>
             <li><Link to="/faqs" className="hover:text-primary">FAQs</Link></li>
             <li>
               <a href={POLE_PROGRAM_URL} target="_blank" rel="noreferrer" className="hover:text-primary">
