@@ -92,7 +92,7 @@ try {
     $mail->Sender = 'rosetta@therosettatone.net';
     $mail->addAddress('rosetta@therosettatone.net');
     $mail->addReplyTo($email, $name);
-    $mail->Subject = 'New contact form message from ' . $name;
+    $mail->Subject = 'New Web Inquiry from ' . $name;
     $mail->Body    = "New contact form message\n\nName:  $name\nEmail: $email\n\nMessage:\n$message\n\nSubmitted: " . date('Y-m-d H:i:s T');
 
     $mail->send();
