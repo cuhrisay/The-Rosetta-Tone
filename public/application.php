@@ -89,7 +89,6 @@ $required = [
     'methods_tried' => $methods_tried,
     'cycle_syncing' => $cycle_syncing,
     'good_fit' => $good_fit,
-    'commitment' => $commitment,
     'heard_about' => $heard_about,
 ];
 foreach ($required as $key => $val) {
@@ -139,7 +138,7 @@ $body .= "Interested in:      $services_interested\n";
 $body .= "Training option:    $training_option\n";
 $body .= "Fitness level:      $fitness_level\n";
 $body .= "Open to cycle sync: $cycle_syncing\n";
-$body .= "Commitment (1-10):  $commitment\n";
+$body .= "Commitment (1-10):  " . ($commitment !== '' ? $commitment : 'Not answered') . "\n";
 $body .= "Heard about via:    $heard_about\n\n";
 $body .= "Goals:\n$goals\n\n";
 $body .= "Eating habits / relationship with food:\n$eating_habits\n\n";

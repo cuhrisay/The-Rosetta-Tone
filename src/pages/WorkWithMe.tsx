@@ -34,7 +34,7 @@ const schema = z.object({
   methods_tried: z.string().min(1, "Required"),
   cycle_syncing: z.string().min(1, "Please choose one"),
   good_fit: z.string().min(1, "Required"),
-  commitment: z.string().min(1, "Please choose one"),
+  commitment: z.string().optional(),
   heard_about: z.string().min(1, "Please choose one"),
   website: z.string().max(0).optional(), // honeypot
 });
