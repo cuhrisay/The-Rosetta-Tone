@@ -9,7 +9,6 @@ require __DIR__ . '/phpmailer/SMTP.php';
 
 header('Content-Type: application/json; charset=utf-8');
 
-// TODO: replace with the live domain(s) once DNS is cut over.
 $allowed_origins = [
     'https://therosettatone.net',
     'https://www.therosettatone.net',
@@ -41,11 +40,13 @@ if (!is_array($data)) {
     exit;
 }
 
+// Honeypot — bots fill this in, real users never see it
 if (!empty($data['website'])) {
     echo json_encode(['success' => true]);
     exit;
 }
 
+// Min load time — bots submit instantly, real users take time
 $loaded_at = isset($data['loaded_at']) ? (int) $data['loaded_at'] : 0;
 $now_ms = (int) (microtime(true) * 1000);
 if ($loaded_at === 0 || ($now_ms - $loaded_at) < 1500) {
@@ -53,13 +54,23 @@ if ($loaded_at === 0 || ($now_ms - $loaded_at) < 1500) {
     exit;
 }
 
-$name  = trim((string)($data['name'] ?? ''));
-$email = trim((string)($data['email'] ?? ''));
+$name    = trim((string)($data['name'] ?? ''));
+$email   = trim((string)($data['email'] ?? ''));
+$message = trim((string)($data['message'] ?? ''));
 
-if ($name === '' || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+if ($name === '' || !filter_var($email, FILTER_VALIDATE_EMAIL) || $message === '') {
     http_response_code(400);
-    echo json_encode(['success' => false, 'error' => 'Invalid name or email']);
+    echo json_encode(['success' => false, 'error' => 'Missing or invalid fields']);
     exit;
+}
+
+$length_caps = ['name' => 100, 'email' => 150, 'message' => 3000];
+foreach ($length_caps as $key => $cap) {
+    if (strlen($$key) > $cap) {
+        http_response_code(400);
+        echo json_encode(['success' => false, 'error' => 'Field too long: ' . $key]);
+        exit;
+    }
 }
 
 $name = str_replace(["\r", "\n"], '', $name);
@@ -81,13 +92,13 @@ try {
     $mail->Sender = 'rosetta@therosettatone.net';
     $mail->addAddress('rosetta@therosettatone.net');
     $mail->addReplyTo($email, $name);
-    $mail->Subject = 'New free guide signup: ' . $name;
-    $mail->Body    = "New free cycle-syncing guide signup\n\nName:  $name\nEmail: $email\n\nSubmitted: " . date('Y-m-d H:i:s T');
+    $mail->Subject = 'New contact form message from ' . $name;
+    $mail->Body    = "New contact form message\n\nName:  $name\nEmail: $email\n\nMessage:\n$message\n\nSubmitted: " . date('Y-m-d H:i:s T');
 
     $mail->send();
     echo json_encode(['success' => true]);
 } catch (Exception $e) {
-    // Don't block the download over a mail hiccup — the guide is a static file either way.
-    error_log('PHPMailer error (free-guide): ' . $mail->ErrorInfo);
-    echo json_encode(['success' => true]);
+    http_response_code(500);
+    error_log('PHPMailer error (contact): ' . $mail->ErrorInfo);
+    echo json_encode(['success' => false, 'error' => $mail->ErrorInfo]);
 }

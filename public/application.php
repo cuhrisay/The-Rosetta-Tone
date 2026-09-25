@@ -153,18 +153,18 @@ $body .= "Submitter IP: $submitter_ip\n";
 $mail = new PHPMailer(true);
 try {
     $mail->isSMTP();
-    // TODO: confirm Infomaniak SMTP host/from-address with Rosetta before go-live.
-    $mail->Host       = 'mail.infomaniak.com';
+    // Google Workspace SMTP. Requires an App Password (not the account password) — generate one under the rosetta@therosettatone.net Google Account's 2-Step Verification settings, and set it as the SMTP_PASSWORD repo secret.
+    $mail->Host       = 'smtp.gmail.com';
     $mail->SMTPAuth   = true;
-    $mail->Username   = 'hello@therosettatone.net';
+    $mail->Username   = 'rosetta@therosettatone.net';
     $mail->Password   = '__SMTP_PASSWORD__';
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $mail->Port       = 587;
     $mail->CharSet    = 'UTF-8';
 
-    $mail->setFrom('hello@therosettatone.net', 'The Rosetta Tone Website');
-    $mail->Sender = 'hello@therosettatone.net';
-    $mail->addAddress('hello@therosettatone.net');
+    $mail->setFrom('rosetta@therosettatone.net', 'The Rosetta Tone Website');
+    $mail->Sender = 'rosetta@therosettatone.net';
+    $mail->addAddress('rosetta@therosettatone.net');
     $mail->addReplyTo($email, $full_name);
     $mail->Subject = 'New 1:1 coaching application from ' . $full_name;
     $mail->Body    = $body;

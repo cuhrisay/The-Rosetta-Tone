@@ -99,6 +99,13 @@ export function Header() {
               >
                 Free Hormone Nutrition Guide
               </Link>
+              <Link
+                to="/contact"
+                onClick={() => setOpen(false)}
+                className="text-sm font-medium tracking-wide text-foreground/80 hover:text-accent"
+              >
+                Contact
+              </Link>
               <a
                 href={POLE_PROGRAM_URL}
                 target="_blank"
