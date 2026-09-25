@@ -65,6 +65,36 @@ if ($name === '' || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
 $name = str_replace(["\r", "\n"], '', $name);
 $email = str_replace(["\r", "\n"], '', $email);
 
+// Add to Mailchimp audience ("The Rosetta Tone", list c7f856680b). Never blocks
+// the download or the notification email if Mailchimp is slow/unreachable.
+$mc_api_key = '__MAILCHIMP_API_KEY__';
+if (strpos($mc_api_key, '__MAILCHIMP') === false && $mc_api_key !== '') {
+    $mc_dc = substr($mc_api_key, strpos($mc_api_key, '-') + 1);
+    $mc_list_id = 'c7f856680b';
+    $mc_hash = md5(strtolower($email));
+    $mc_url = "https://$mc_dc.api.mailchimp.com/3.0/lists/$mc_list_id/members/$mc_hash";
+    $mc_payload = json_encode([
+        'email_address' => $email,
+        'status_if_new' => 'subscribed',
+        'merge_fields' => ['FNAME' => $name],
+    ]);
+
+    $ch = curl_init($mc_url);
+    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PUT');
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $mc_payload);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_TIMEOUT, 8);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, [
+        'Content-Type: application/json',
+        'Authorization: Basic ' . base64_encode('apikey:' . $mc_api_key),
+    ]);
+    curl_exec($ch);
+    if (curl_errno($ch)) {
+        error_log('Mailchimp error: ' . curl_error($ch));
+    }
+    curl_close($ch);
+}
+
 $mail = new PHPMailer(true);
 try {
     $mail->isSMTP();

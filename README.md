@@ -19,6 +19,7 @@ Pushing to `main` triggers `.github/workflows/deploy.yml`, which builds the app 
 
 - `FTP_SERVER`, `FTP_USERNAME`, `FTP_PASSWORD` — Infomaniak FTP credentials (hosting for the built site)
 - `SMTP_PASSWORD` — a Google Workspace **App Password** for `rosetta@therosettatone.net` (not her account password — generate one under that Google Account's 2-Step Verification settings). Injected into the PHP form handlers at build time, replacing the `__SMTP_PASSWORD__` placeholder. All three form handlers send via `smtp.gmail.com` to `rosetta@therosettatone.net`.
+- `MAILCHIMP_API_KEY` — Mailchimp API key for Rosetta's account. `free-guide.php` uses it to add guide downloads to her "The Rosetta Tone" audience (list ID `c7f856680b`), single opt-in. Injected at build time, replacing `__MAILCHIMP_API_KEY__`.
 
 ## Known follow-ups
 

@@ -22,16 +22,18 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Inject SMTP password
+      - name: Inject secrets
         env:
           SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+          MAILCHIMP_API_KEY: ${{ secrets.MAILCHIMP_API_KEY }}
         run: |
           python3 -c "
           import os
-          for path in ['./dist/application.php', './dist/free-guide.php']:
+          for path in ['./dist/application.php', './dist/free-guide.php', './dist/contact.php']:
               with open(path, 'r') as f:
                   content = f.read()
               content = content.replace('__SMTP_PASSWORD__', os.environ['SMTP_PASSWORD'])
+              content = content.replace('__MAILCHIMP_API_KEY__', os.environ.get('MAILCHIMP_API_KEY', ''))
               with open(path, 'w') as f:
                   f.write(content)
           "
