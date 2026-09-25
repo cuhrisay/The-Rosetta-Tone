@@ -17,7 +17,7 @@ const schema = z.object({
 
 type FormValues = z.infer<typeof schema>;
 
-const GUIDE_URL = "/assets/downloads/free-guide-cycle-syncing-nutrition.pdf";
+const GUIDE_URL = "/assets/downloads/free-guide-cycle-syncing-nutrition-2026.pdf";
 
 export default function FreeGuide() {
   useSeo({
