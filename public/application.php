@@ -63,7 +63,12 @@ $first_name           = field($data, 'first_name');
 $last_name             = field($data, 'last_name');
 $email                 = field($data, 'email');
 $phone                 = field($data, 'phone');
-$services_interested   = field($data, 'services_interested');
+
+// services_interested is a checkbox group — arrives as an array of selected options.
+$services_raw = $data['services_interested'] ?? [];
+$services_interested = is_array($services_raw)
+    ? implode(', ', array_map('strval', array_filter($services_raw, fn($v) => $v !== '' && $v !== null)))
+    : trim((string) $services_raw);
 $training_option       = field($data, 'training_option');
 $fitness_level         = field($data, 'fitness_level');
 $goals                 = field($data, 'goals');
@@ -107,7 +112,7 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 
 $length_caps = [
     'first_name' => 100, 'last_name' => 100, 'email' => 150, 'phone' => 30,
-    'services_interested' => 50, 'training_option' => 100, 'fitness_level' => 150,
+    'services_interested' => 150, 'training_option' => 100, 'fitness_level' => 150,
     'goals' => 2000, 'eating_habits' => 2000, 'barriers' => 2000, 'methods_tried' => 2000,
     'cycle_syncing' => 50, 'good_fit' => 2000, 'commitment' => 5, 'heard_about' => 50,
 ];

@@ -14,7 +14,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Checkbox } from "@/components/ui/checkbox";
 import { useToast } from "@/hooks/use-toast";
 import { useSeo } from "@/hooks/use-seo";
 
@@ -23,9 +23,7 @@ const schema = z.object({
   last_name: z.string().min(1, "Required"),
   email: z.string().email("Enter a valid email"),
   phone: z.string().min(7, "Enter a valid phone number"),
-  services_interested: z.enum(["Personal Training", "Pole Dance Lessons", "Both"], {
-    errorMap: () => ({ message: "Please choose one" }),
-  }),
+  services_interested: z.array(z.string()).min(1, "Select at least one"),
   training_option: z.string().min(1, "Please choose one"),
   fitness_level: z.string().min(1, "Please choose one"),
   goals: z.string().min(1, "Required"),
@@ -125,17 +123,28 @@ export default function WorkWithMe() {
 
           <div>
             <Label>Which services are you interested in?</Label>
-            <RadioGroup
-              className="mt-2 space-y-2"
-              onValueChange={(v) => setValue("services_interested", v as FormValues["services_interested"])}
-            >
-              {["Personal Training", "Pole Dance Lessons", "Both"].map((opt) => (
-                <div key={opt} className="flex items-center gap-2">
-                  <RadioGroupItem value={opt} id={`services-${opt}`} />
-                  <Label htmlFor={`services-${opt}`} className="font-normal">{opt}</Label>
-                </div>
-              ))}
-            </RadioGroup>
+            <p className="mt-1 text-xs text-muted-foreground">Select all that apply.</p>
+            <div className="mt-2 space-y-2">
+              {["Personal Training", "Nutrition", "Pole Dance Lessons"].map((opt) => {
+                const selected = watch("services_interested") ?? [];
+                const checked = selected.includes(opt);
+                return (
+                  <div key={opt} className="flex items-center gap-2">
+                    <Checkbox
+                      id={`services-${opt}`}
+                      checked={checked}
+                      onCheckedChange={(isChecked) => {
+                        const next = isChecked
+                          ? [...selected, opt]
+                          : selected.filter((v) => v !== opt);
+                        setValue("services_interested", next, { shouldValidate: true });
+                      }}
+                    />
+                    <Label htmlFor={`services-${opt}`} className="font-normal">{opt}</Label>
+                  </div>
+                );
+              })}
+            </div>
             {errors.services_interested && <p className="mt-1 text-sm text-destructive">{errors.services_interested.message}</p>}
           </div>
 
