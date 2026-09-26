@@ -134,22 +134,23 @@ $submitter_ip = $_SERVER['HTTP_CF_CONNECTING_IP']
     ?? $_SERVER['REMOTE_ADDR']
     ?? 'unknown';
 
+// Field order below intentionally matches the order the questions appear on the form.
 $body  = "New 1:1 coaching application\n";
 $body .= "====================\n\n";
 $body .= "Name:  $full_name\n";
 $body .= "Email: $email\n";
 $body .= "Phone: $phone\n\n";
-$body .= "Interested in:      $services_interested\n";
-$body .= "Training option:    $training_option\n";
-$body .= "Fitness level:      $fitness_level\n";
-$body .= "Open to cycle sync: $cycle_syncing\n";
-$body .= "Commitment (1-10):  " . ($commitment !== '' ? $commitment : 'Not answered') . "\n";
-$body .= "Heard about via:    $heard_about\n\n";
-$body .= "Goals:\n$goals\n\n";
-$body .= "Eating habits / relationship with food:\n$eating_habits\n\n";
-$body .= "Barriers / challenges:\n$barriers\n\n";
-$body .= "Methods/programs tried before:\n$methods_tried\n\n";
-$body .= "Why a good fit:\n$good_fit\n\n";
+$body .= "Which services are you interested in?\n$services_interested\n\n";
+$body .= "Which training option are you most interested in right now?\n$training_option\n\n";
+$body .= "How would you describe your current fitness level?\n$fitness_level\n\n";
+$body .= "What are your top 2-3 fitness or nutrition goals right now?\n$goals\n\n";
+$body .= "How would you describe your current eating habits and relationship with food?\n$eating_habits\n\n";
+$body .= "What barriers or challenges have held you back from reaching your health goals in the past?\n$barriers\n\n";
+$body .= "What methods, programs, or diets have you tried before? What worked, what didn't?\n$methods_tried\n\n";
+$body .= "Are you open to incorporating cycle syncing into your routine?\n$cycle_syncing\n\n";
+$body .= "Why do you believe you're a good fit for 1:1 coaching?\n$good_fit\n\n";
+$body .= "On a scale of 1-10, how committed are you to taking action toward your goals?\n" . ($commitment !== '' ? $commitment : 'Not answered') . "\n\n";
+$body .= "How did you hear about me?\n$heard_about\n\n";
 $body .= "====================\n";
 $body .= "Submitted:    " . date('Y-m-d H:i:s T') . "\n";
 $body .= "Submitter IP: $submitter_ip\n";
